@@ -1,0 +1,17 @@
+div#superior {
+    width: 100%;
+    height: 40px;
+    background: #bf4f00 !important;
+}
+
+div#usuariologueado {
+    position: absolute;
+    right: 0px;
+    width: 196px;
+    height: 40px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+    font-style: normal;
+    cursor: pointer;
+}

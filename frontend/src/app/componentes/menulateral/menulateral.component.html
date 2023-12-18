@@ -1,0 +1,24 @@
+<div id="menulateral">
+
+    <div id="datousuario">
+        <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-No-Background.png" id="miavatar">
+        <div id="nameuser"><span style="color: #ff5900;">{{ name }}</span></div>
+        <div id="rol">
+            <span style="color: #fde8ac;" *ngIf="rol == '1'">HR Manager</span>
+            <span style="color: #fde8ac;" *ngIf="rol == '2'">Reclutador</span>
+        </div> 
+    </div>
+
+    <div id="menu">
+        <div class="itemmenu" routerLink="/dashboard">Dashboard</div>
+        <div class="itemmenu" routerLink="/users">Tu Equipo</div>
+        <div class="itemmenu" routerLink="/candidates">Tus Candidatos</div>
+        <div class="itemmenu" routerLink="/roles">Vacantes</div>
+        <div class="itemmenu" routerLink="/schedule">Calendario</div>
+        <div class="itemmenu">Notificaciones</div>
+        <div class="itemmenu" (click)="Logout()">Cerrar Sesión</div>    
+
+    </div>
+
+</div>
+

@@ -1,0 +1,61 @@
+/* Flip Card Styles ******************************************************/
+.flip-card-container {
+    display: flex;
+    /* Adjust as needed */
+    flex-wrap: nowrap;
+    /* This allows cards to wrap to the next line if there isn't enough space */
+    margin-bottom: 24px;
+    margin-top: -24px;    
+}
+
+.flip-card {
+    background-color: transparent;
+    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+    border: 0 solid #000000;
+    perspective: 1000px;
+    padding: 0px;
+    margin-top: 36px;
+
+    
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back,
+.flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+}
+
+.flip-card-front {
+    background-color: #000000;
+    color: #C54601;
+    border-radius: 16px;
+}
+
+.flip-card-back {
+    border-radius: 16px;
+    padding: 24px;
+    background-color: #0f0f0f;
+    color: white;
+    transform: rotateY(180deg);
+    border: solid 0.5px #a3a3a3;
+}

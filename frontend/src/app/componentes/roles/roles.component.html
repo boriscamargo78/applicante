@@ -1,0 +1,106 @@
+<app-menusuperior></app-menusuperior>
+<app-menuinterno></app-menuinterno>
+<app-menulateral></app-menulateral>
+<div id="tituloventana">
+  <div class="alert alert-warning" role="alert"><i class="fa fa-briefcase" style="color: white;"></i>
+        Posiciones Vacantes
+        <div id="btnNuevo" (click)="Nuevo()">+</div>
+      </div>
+</div>
+<div id="areadetrabajo">
+
+    <table class="table table-striped table-dark table-hover">      
+        <thead>
+          <tr>
+            <th scope="col"><span style="color: #ffe9a1;">POSICIÓN</span></th>
+            <th scope="col"><span style="color: #ffe9a1;">DESCRIPCIÓN</span></th>
+            <th scope="col"><span style="color: #ffe9a1;">SKILLS</span></th>
+            <th scope="col"><span style="color: #ffe9a1;">DEPARTAMENTO</span></th>
+            <th scope="col"><span style="color: #ffe9a1;">ESTADO</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data" (click)="EditarId(item._id)">
+            <td>{{item.role}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.skills}}</td>
+            <td>{{item.rol}}</td>
+            <td>
+                <span *ngIf="item.estado == '1'">Activo</span>
+                <span *ngIf="item.estado == '2'">Inactiva</span>
+            </td>
+          </tr>         
+        </tbody>
+      </table>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Gestión de Vacantes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--Formulario-->
+        <div class="form-group">
+          <label for="role" class="label-color">Posición</label>
+          <input type="text" class="form-control" id="role" [(ngModel)]="role">
+      </div>
+  
+      <div class="form-group">
+          <label for="descripcion" class="label-color">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" [(ngModel)]="descripcion">
+      </div>
+
+      <div class="form-group">
+        <label for="skills" class="label-color">Skills Requeridos</label>
+        <input type="text" class="form-control" id="skills" [(ngModel)]="skills">
+    </div>
+  
+    <div class="form-group">
+      <label for="rol" class="label-color">Departamento Solicitante</label>
+      <input type="text" class="form-control" id="rol" [(ngModel)]="rol">
+  </div>
+
+<!--   <div class="form-group">
+    <label for="rol" class="label-color">Estado</label>
+    <input type="text" class="form-control" id="rol" [(ngModel)]="estado">
+</div>
+ -->
+  <div class="form-group" *ngIf="miId != ''">
+    <label for="estado"><span style="color: #f4f4f4;">Estado</span></label>
+    <select class="form-control" id="estado" [(ngModel)]="estado">
+      <option value="2">Inactiva</option>
+      <option value="1">Activa</option>          
+    </select>
+  </div>  
+     <!--Dropdown de Bootstrap Empieza aqui-->
+<!--       <div class="form-group" *ngIf="miId != ''">
+        <label for="exampleFormControlSelect1"><span style="color: #f4f4f4;">Rol</span></label>
+        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="rol">
+          <option value="1">Administrador</option>
+          <option value="2">Cliente</option>
+        </select>
+      </div> -->
+    <!--Dropdown de Bootstrap Termina aqui--> 
+
+    <!--  Dropdown de Bootstrap Empieza aqui-->
+
+<!--Dropdown de Bootstrap Termina aqui--> 
+
+<!--Botones empiezan aqui--> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" *ngIf="miId == ''" (click)="guardar()">Crear Vacante</button>
+        <button type="button" class="btn btn-primary" *ngIf="miId != ''" (click)="actualizar()">Actualizar Datos</button>
+        <button type="button" class="btn btn-danger" *ngIf="miId != ''" (click)="eliminar()">Borrar Vacante</button> 
+
+      </div>
+    </div>
+  </div>
+</div>

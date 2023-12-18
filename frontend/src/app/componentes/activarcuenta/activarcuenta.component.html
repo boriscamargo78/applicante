@@ -1,0 +1,20 @@
+<div class="alert alert-dark" role="alert">
+    Activa tu cuenta para tener acceso a tu espacio!
+  </div>
+
+<div id="miregistro">
+
+    <div class="form-group">
+        <label for="nombre" class="label-color">Email</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="email"></div>
+
+        <div class="form-group">
+            <label for="apellido" class="label-color">Codigo</label>
+            <input type="text" class="form-control" id="mipass" [(ngModel)]="codigo"></div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-dark" (click)="Activar()">Activar Cuenta
+                </button>
+            </div>
+
+        </div>

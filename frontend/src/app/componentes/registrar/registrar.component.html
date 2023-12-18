@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<div class="alert alert-dark" role="alert">
+    Registra tus datos para tener acceso a nuestras herramientas!
+  </div>
+
+
+
+
+<div id="miregistro">
+  
+    <div class="form-group">
+
+        <div class="center-text"><h4><span style="color: #d1d1d1;"><i class="fa fa-user-plus" style="color: #C54601;"></i> Registro</span></h4></div>
+        <hr class="line-divider"> <!-- linea bajo titulo -->
+        <br>
+        <label for="nombre" class="label-color">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="name">
+    </div>
+
+    <div class="form-group">
+        <label for="apellido" class="label-color">Apellidos</label>
+        <input type="text" class="form-control" id="apellido" [(ngModel)]="lastname">
+    </div>
+
+    <div class="form-group">
+        <label for="usuario" class="label-color">Usuario/Email</label>
+        <input type="text" class="form-control" id="usuario" [(ngModel)]="email">
+    </div>
+
+    <div class="form-group">
+        <label for="mipass" class="label-color">Contrasena (8 caracteres)</label>
+        <input type="text" class="form-control" id="password" [(ngModel)]="password">
+    </div>
+
+    <div class="tooltip">Debe contener...                                
+    </div>
+
+    <div class="modal-footer">
+        <button
+            type="submit"
+            class="btn btn-dark"
+            (click)="guardar()"
+            >Regístrarme!
+        </button>
+    </div>
+</div>
+
+<app-heroclose></app-heroclose>

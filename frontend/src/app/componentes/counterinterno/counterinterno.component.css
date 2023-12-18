@@ -1,0 +1,38 @@
+/* Contador Estadísiticas ************************************************/
+
+.counter-container {
+    position: relative;
+    text-align: center !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    /* Centra horizontalmente el container */
+}
+
+/*Titulo*/
+.counter-item {
+    text-align: center;
+    color: #ffffff;
+    background-color: #1c1c1c;
+    padding: 48px;
+    margin-top: 0px;
+    border-radius: 24px;
+    width: 350px;
+
+}
+
+/*Numero Grande*/
+.counter-item h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #C54601;
+}
+
+/*Subtitulo*/
+.counter-item h5 {
+    font-size: 18px;
+    font-weight: lighter;
+    margin: 5px 0 0;
+}

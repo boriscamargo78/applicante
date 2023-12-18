@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+
+<div class="alert alert-dark" role="alert">
+    Estás a un paso de entrar a tu cuenta. A continuación ingresa tu usuario y
+        contraseña.
+  </div>
+
+<div id="miregistro">
+
+    <div class="form-group">
+        <div class="center-text"><h4><span style="color: #d1d1d1;"><i class="fa fa-lock" style="color: #C54601;"></i> Login</span></h4></div>
+        <hr class="line-divider"> <!-- linea bajo titulo -->
+        <br>
+        <label for="nombre" class="label-color">Usuario/Email</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="email">
+    </div>
+
+        <div class="form-group">
+            <label for="mipass" class="label-color">Contraseña</label>
+            <input type="password" class="form-control" id="mipass" [(ngModel)]="password"></div>
+
+            <div class="tooltip">Debe contener...</div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" (click)="login()">Ingresar</button>
+            </div>
+            <br>
+            <div id="legend">No tienes una cuenta aún? <span style="color: #ff5900;">Regístrate</span></div>
+            
+        </div>
+
+        <app-heroclose></app-heroclose>
+
+        
